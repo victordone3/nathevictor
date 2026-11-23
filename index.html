@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nathália &amp; Victor · 10 de julho de 2027</title>
+<meta name="description" content="Nathália & Victor se casam em 10 de julho de 2027, na Vinícola Alma Rios, em Patos de Minas (MG). Acompanhe as informações e confirme sua presença.">
+<meta name="theme-color" content="#9d9d61">
+<meta property="og:title" content="Nathália & Victor · 10 de julho de 2027">
+<meta property="og:description" content="Você é nosso convidado. Vinícola Alma Rios · Patos de Minas (MG).">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nathevictor.com.br/assets/aquarela-horizontal.jpg">
+<link rel="icon" type="image/png" href="assets/monograma-verde.png">
+<link rel="preload" as="image" href="assets/selo.png">
+<link rel="preload" as="image" href="assets/aquarela-horizontal.jpg" media="(min-aspect-ratio: 1001/1000)">
+<link rel="preload" as="image" href="assets/aquarela-vertical.jpg" media="(max-aspect-ratio: 1/1)">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --oliva:#9d9d61;
+  --oliva-escuro:#63672d;
+  --oliva-claro:#c2c492;
+  --creme:#f0edea;
+  --papel:#e9e5de;
+  --salvia:#e2e2cc;
+  --texto:#4d5026;
+  --texto-suave:rgba(77,80,38,.68);
+  --linha:rgba(99,103,45,.2);
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+  --serif:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --ease:cubic-bezier(.65,0,.25,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--creme);color:var(--texto);font-family:var(--serif);font-size:19px;line-height:1.55;overflow-x:hidden;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1}
+body.locked{overflow:hidden;height:100vh;height:100dvh}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--oliva-escuro);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ ABERTURA: ENVELOPE ============ */
+.intro{position:fixed;inset:0;z-index:100;perspective:1800px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  background:transparent}
+.intro.gone{display:none}
+.intro .stage{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s ease-out;will-change:transform}
+.piece{position:absolute;inset:0;filter:drop-shadow(0 0 16px rgba(60,52,24,.28))}
+.piece>i{position:absolute;inset:0;display:block;
+  background:
+    linear-gradient(rgba(247,243,233,.62),rgba(247,243,233,.62)),
+    url(assets/papel.jpg) center/cover;
+}
+/* geometria: vértice central C = (50%, 56%); bolso termina nas laterais em 78% */
+.p-left i{clip-path:polygon(0 0,50% 50%,0 76%)}
+.p-right i{clip-path:polygon(100% 0,50% 50%,100% 76%)}
+.p-bottom i{clip-path:polygon(0 100%,0 76%,50% 50%,100% 76%,100% 100%)}
+.p-left i{background-position:left center}
+.p-right i{background-position:right center}
+.pocket{position:absolute;inset:0}
+.p-left,.p-right,.p-bottom{transition:transform 1.5s var(--ease)}
+.p-left{z-index:2}.p-right{z-index:2}.p-bottom{z-index:1}
+
+.flap{position:absolute;inset:0;z-index:5;transform-origin:50% 0;transform:rotateX(0);
+  transition:transform 1.7s var(--ease);filter:drop-shadow(0 6px 18px rgba(60,52,24,.35))}
+.flap>i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 50%);
+  background:linear-gradient(rgba(247,243,233,.5),rgba(247,243,233,.5)),url(assets/papel.jpg) center/cover}
+
+.invite-text{position:absolute;left:0;right:0;top:81%;z-index:3;text-align:center;font-family:var(--script);color:var(--oliva-escuro);
+  font-size:clamp(22px,4.2vmin,40px);line-height:1.15;padding:0 20px;transition:transform 1.5s var(--ease)}
+.invite-text small{display:block;font-family:var(--serif);font-size:.42em;letter-spacing:.34em;text-transform:uppercase;margin-top:.9em;opacity:.7}
+
+/* lacre */
+.seal{position:absolute;left:50%;top:50%;width:clamp(210px,34vmin,330px);aspect-ratio:770/720;transform:translate(-50%,-50%);z-index:6}
+.seal img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(38,34,12,.42)) drop-shadow(0 2px 3px rgba(38,34,12,.35));user-select:none;-webkit-user-drag:none}
+.seal.press{animation:press .45s ease-out}
+@keyframes press{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(.9)}100%{transform:translate(-50%,-50%) scale(1)}}
+.seal::after{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(255,255,255,.7);opacity:0;animation:pulse 2.6s ease-out infinite;pointer-events:none}
+.intro.opening .seal::after{display:none}
+@keyframes pulse{0%{transform:scale(.8);opacity:.0}25%{opacity:.8}100%{transform:scale(1.35);opacity:0}}
+
+.tap{position:absolute;left:0;right:0;bottom:max(26px,env(safe-area-inset-bottom));z-index:7;text-align:center;
+  font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--oliva-escuro);opacity:.8;transition:opacity .5s}
+.intro.opening .tap{opacity:0}
+
+/* sequência */
+.intro.opening .flap{transform:rotateX(180deg)}
+.intro.slide .p-left{transform:translateX(-104%)}
+.intro.slide .p-right{transform:translateX(104%)}
+.intro.slide .p-bottom{transform:translateY(106%)}
+.intro.slide .invite-text{transform:translateY(120vh)}
+.intro.fade{opacity:0;transition:opacity .9s ease;pointer-events:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:#cfd9e0}
+.hero-bg{position:absolute;inset:0;background:url(assets/aquarela-horizontal.jpg) 50% 60%/cover no-repeat;transform:scale(1.02);transform-origin:50% 60%}
+@media (max-aspect-ratio:1/1){.hero-bg{background-image:url(assets/aquarela-vertical.jpg);background-position:50% 55%}
+  .hero::after{background:radial-gradient(ellipse 85% 30% at 50% 29%,rgba(255,255,255,.8),rgba(255,255,255,.4) 60%,rgba(255,255,255,0) 100%),linear-gradient(0deg,rgba(28,32,8,.42),rgba(28,32,8,0) 26%)}}
+.revealed .hero-bg{animation:kb 22s ease-out forwards}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 36% at 50% 25%,rgba(255,255,255,.78),rgba(255,255,255,.35) 55%,rgba(255,255,255,0) 100%),linear-gradient(0deg,rgba(28,32,8,.42),rgba(28,32,8,0) 26%)}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(70px,13vh,130px) 24px 0;color:var(--oliva-escuro)}
+.hero-kicker{font-size:clamp(13px,1.5vw,16px);letter-spacing:.46em;text-transform:uppercase;font-weight:600;margin-bottom:clamp(10px,2vh,22px)}
+.hero h1{font-weight:400;line-height:.92}
+.hero h1 .nm{display:block;font-family:var(--script);font-size:clamp(64px,min(17vw,13vh),176px);color:var(--oliva-escuro);text-shadow:0 1px 18px rgba(255,255,255,.6)}
+.hero h1 .amp{display:block;font-family:var(--script);font-size:clamp(30px,min(7vw,6vh),58px);margin:.08em 0;text-shadow:0 1px 14px rgba(255,255,255,.6)}
+/* telas largas: nomes na mesma linha, para ficar sobre o céu da aquarela */
+@media (min-aspect-ratio:5/4){
+  .hero h1{display:flex;align-items:baseline;justify-content:center;gap:.28em;white-space:nowrap}
+  .hero h1 .nm{font-size:clamp(60px,min(8.2vw,16vh),140px)}
+  .hero h1 .amp{font-size:clamp(34px,min(5vw,10vh),70px);margin:0}
+  .hero-inner{padding-top:clamp(64px,12vh,130px)}
+}
+.hero-scroll{position:absolute;z-index:3;bottom:max(28px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;text-decoration:none;color:#fff}
+.hero-scroll .pill{display:inline-block;font-size:14px;line-height:1.7;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.9),0 2px 4px rgba(0,0,0,.7),0 3px 12px rgba(0,0,0,.6),0 0 26px rgba(0,0,0,.45)}
+.hero-scroll svg{display:block;margin:8px auto 0;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+.hero [data-seq]{opacity:0;transform:translateY(18px);transition:opacity 1.3s ease,transform 1.3s ease}
+.revealed .hero [data-seq]{opacity:1;transform:none}
+.revealed .hero [data-seq="1"]{transition-delay:.1s}
+.revealed .hero [data-seq="2"]{transition-delay:.45s}
+.revealed .hero [data-seq="3"]{transition-delay:.8s}
+.revealed .hero [data-seq="4"]{transition-delay:1.15s}
+.revealed .hero [data-seq="5"]{transition-delay:1.6s}
+
+/* ============ NAV ============ */
+.nav{position:fixed;z-index:60;top:14px;left:50%;transform:translate(-50%,-90px);display:flex;gap:2px;padding:5px;border-radius:99px;
+  background:rgba(240,237,234,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--linha);transition:transform .8s var(--ease) 1.2s;max-width:calc(100vw - 20px)}
+.revealed .nav{transform:translate(-50%,0)}
+.nav a{padding:7px 14px;border-radius:99px;text-decoration:none;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--texto-suave);white-space:nowrap;transition:.25s}
+.nav a:hover,.nav a.on{background:var(--oliva-escuro);color:var(--creme)}
+@media(max-width:640px){.nav a{padding:7px 10px;font-size:11px;letter-spacing:.12em}.nav a.hide-m{display:none}}
+
+/* ============ SEÇÕES ============ */
+section{position:relative}
+/* cada dobra tem sua cor; a troca acontece numa linha reta */
+.band{background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1020px}
+.sec{padding:clamp(70px,11vw,130px) 0}
+.eyebrow{font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--texto-suave);font-weight:600;margin-bottom:14px;display:block}
+h2{font-family:var(--script);font-weight:400;font-size:clamp(50px,9vw,84px);line-height:1.05;color:var(--oliva-escuro)}
+.center{text-align:center}
+.rule{width:44px;height:1px;background:var(--linha);margin:26px auto;border:0}
+.lead{font-size:clamp(19px,2.4vw,23px);color:var(--texto-suave);max-width:34em;margin:18px auto 0}
+.mul{mix-blend-mode:multiply}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+.js .reveal.in{opacity:1;transform:none}
+.pendente{background:rgba(194,196,146,.45);border-bottom:1.5px dashed var(--oliva);padding:0 .3em;border-radius:3px;font-style:italic;white-space:nowrap}
+.dark .pendente{background:rgba(240,237,234,.16);border-bottom-color:rgba(240,237,234,.6)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:99px;border:1px solid var(--oliva-escuro);color:var(--oliva-escuro);text-decoration:none;
+  font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;background:transparent;cursor:pointer;font-family:var(--serif);transition:.3s}
+.btn:hover{background:var(--oliva-escuro);color:var(--creme)}
+.btn.solid{background:var(--oliva-escuro);color:var(--creme)}
+.btn.solid:hover{background:var(--oliva);border-color:var(--oliva)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+
+/* convite */
+.convite{--bg:var(--creme);text-align:center;padding:clamp(70px,10vw,120px) 0 clamp(64px,8vw,96px)}
+.convite .mono{width:clamp(86px,13vw,124px);margin:0 auto 26px;opacity:.95}
+.convite .frase{font-size:clamp(15px,1.7vw,18px);letter-spacing:.2em;text-transform:uppercase;max-width:30em;margin:0 auto;line-height:1.9;color:var(--texto)}
+.convite .nomes{font-family:var(--script);font-size:clamp(54px,10vw,96px);color:var(--oliva-escuro);margin:46px 0 28px;line-height:1.05}
+.dataBloco{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,34px);margin-top:8px}
+.dataBloco .lado{flex:1;max-width:210px;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:10px 0;font-size:clamp(14px,1.8vw,19px);letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+.dataBloco .dia{font-size:clamp(70px,11vw,118px);line-height:.9;color:var(--oliva-escuro);font-weight:500}
+.convite .local{margin-top:10px;font-size:clamp(12.5px,1.4vw,14px);letter-spacing:.26em;text-transform:uppercase;color:var(--texto-suave)}
+.dataSub{margin-top:14px;font-size:clamp(15px,1.8vw,19px);letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+/* contagem */
+.contagem{--bg:var(--salvia);padding:clamp(64px,8vw,100px) 24px clamp(80px,10vw,120px)}
+.contagem .in{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.contagem .galho{display:block;width:min(600px,94%);height:auto;margin:0 auto clamp(14px,2.6vw,28px)}
+.cd{display:flex;justify-content:center;margin-top:44px}
+.cd>div{padding:0 clamp(12px,3.2vw,36px);border-right:1px solid var(--linha);min-width:0}
+.cd>div:last-child{border:0}
+.cd b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(42px,8vw,76px);line-height:1;color:var(--oliva-escuro);font-variant-numeric:tabular-nums}
+.cd span{display:block;margin-top:10px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--texto-suave)}
+@media(max-width:560px){.cd{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px}.cd>div{padding:0 4px}.cd b{font-size:clamp(34px,10.5vw,46px)}.cd span{font-size:10px;letter-spacing:.12em}}
+
+/* celebração */
+.cartao{background:rgba(99,103,45,.035);border:1px solid var(--linha);border-radius:22px;padding:clamp(34px,6vw,64px) clamp(22px,5vw,56px);text-align:center;position:relative}
+.cartao .ilus{width:clamp(200px,34vw,300px);margin:-60px auto 18px;mix-blend-mode:multiply;transform:translateY(-6px)}
+.cartao h3{font-family:var(--script);font-weight:400;font-size:clamp(46px,8vw,70px);line-height:1.05;color:var(--oliva-escuro);margin:6px 0 6px}
+.cartao .endereco{margin:-2px 0 14px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-suave)}
+.cartao .sub{color:var(--texto-suave);font-size:clamp(18px,2.2vw,21px);max-width:28em;margin:0 auto}
+.cartao .dt{font-style:italic;color:var(--texto-suave);font-size:20px;letter-spacing:.04em}
+.cartao .hr{font-size:clamp(38px,6vw,54px);color:var(--oliva-escuro);font-weight:500;line-height:1.1}
+.mapa{margin-top:34px;border-radius:18px;overflow:hidden;border:1px solid var(--linha);aspect-ratio:16/10;background:var(--papel)}
+.mapa iframe{width:100%;height:100%;border:0;filter:saturate(.75) sepia(.12)}
+
+/* programação */
+.prog{--bg:var(--papel)}
+#celebracao,#chegar,#rsvp{--bg:var(--creme)}
+.linha-tempo{max-width:640px;margin:46px auto 0;position:relative}
+.linha-tempo::before{content:"";position:absolute;left:118px;top:8px;bottom:8px;width:1px;background:var(--linha)}
+.ev{display:grid;grid-template-columns:100px 1fr;gap:38px;padding:14px 0;align-items:start;position:relative}
+.ev::after{content:"";position:absolute;left:113px;top:26px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1.5px solid var(--oliva)}
+.ev .h{text-align:right;font-size:22px;font-weight:600;color:var(--oliva-escuro);line-height:1.25;padding-top:6px}
+.ev .h small{display:block;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-suave);font-weight:600}
+.ev h4{font-weight:600;font-size:21px;color:var(--oliva-escuro)}
+.ev p{color:var(--texto-suave);font-size:18px}
+.ev.dia{margin-top:12px}
+.ev.dia .t{grid-column:1/-1;text-align:center;font-family:var(--script);font-size:38px;color:var(--oliva-escuro)}
+.ev.dia::after{display:none}
+@media(max-width:520px){.linha-tempo::before{left:84px}.ev{grid-template-columns:70px 1fr;gap:30px}.ev::after{left:79px}.ev .h{font-size:19px}}
+
+.dress{margin:28px 0 0;border:1px solid var(--linha);border-radius:22px;padding:clamp(30px,5vw,48px) clamp(20px,5vw,44px);text-align:center;background:rgba(99,103,45,.035)}
+.dress .rot{display:block;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--texto-suave);font-weight:700}
+.dress h3{font-family:var(--script);font-weight:400;font-size:clamp(44px,7vw,60px);line-height:1.1;color:var(--oliva-escuro);margin:6px 0 10px}
+.dress p{font-size:clamp(18px,2.1vw,20px);line-height:1.55;color:var(--texto)}
+.dress .dress-txt{max-width:30em;margin:0 auto}
+.dress .trajes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.dress .trajes>div{border:1px solid var(--linha);border-radius:14px;padding:16px 14px;background:rgba(255,255,255,.5)}
+.dress .trajes .rot{color:var(--oliva-escuro);margin-bottom:6px}
+.dress .bloco{margin-top:14px;padding:16px 20px;border-radius:14px;background:rgba(194,196,146,.26)}
+.dress .bloco .rot{color:var(--oliva-escuro);margin-bottom:6px}
+.dress .dica{background:transparent;border-top:1px solid var(--linha);border-radius:0;padding:20px 4px 0;margin-top:22px}
+@media(max-width:520px){.dress .trajes{grid-template-columns:1fr}}
+
+/* hospedagem (destaque) */
+.dark{--bg:var(--oliva-escuro);color:var(--creme)}
+.dark h2{color:#fff}
+.dark .eyebrow,.dark .lead{color:rgba(240,237,234,.78)}
+.aviso{display:flex;gap:16px;align-items:flex-start;background:rgba(240,237,234,.1);border:1px solid rgba(240,237,234,.32);border-radius:16px;padding:22px 24px;margin:38px 0 0;text-align:left}
+.aviso svg{flex:none;margin-top:3px}
+.aviso p{font-size:clamp(18px,2.2vw,21px)}
+.aviso strong{font-weight:600;letter-spacing:.04em}
+.hotel{background:var(--creme);color:var(--texto);border-radius:22px;padding:clamp(28px,5vw,48px);margin-top:26px;text-align:center}
+.hotel .tag{display:inline-block;padding:6px 16px;border-radius:99px;background:var(--oliva-escuro);color:var(--creme);font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+.hotel h3{font-family:var(--script);font-weight:400;font-size:clamp(44px,7vw,62px);color:var(--oliva-escuro);margin:16px 0 4px;line-height:1.1}
+.hotel h3 .pendente{font-family:var(--serif);font-style:italic;font-size:.5em;letter-spacing:.06em;display:inline-block;margin:10px 0}
+.hotel .regra{max-width:30em;margin:14px auto 0;font-size:clamp(18px,2.1vw,21px)}
+.hotel .regra em{font-style:normal;font-weight:600;color:var(--oliva-escuro)}
+.contatos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.contatos div{border:1px solid var(--linha);border-radius:14px;padding:16px 10px;background:rgba(255,255,255,.4)}
+.contatos small{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--texto-suave);font-weight:600;margin-bottom:6px}
+.contatos span{font-size:17px;word-break:break-word}
+.contatos a{display:block;font-size:17.5px;color:var(--oliva-escuro);text-decoration:none;font-weight:500;line-height:1.45;overflow-wrap:break-word}
+.contatos a:hover{text-decoration:underline;text-underline-offset:3px}
+.hotel .ideia{max-width:30em;margin:10px auto 0;font-size:clamp(18px,2.1vw,21px);color:var(--texto);line-height:1.55}
+.hotel .tarifa{max-width:30em;margin:22px auto 0;padding:16px 22px;border-radius:14px;background:rgba(194,196,146,.28);font-size:clamp(18px,2.1vw,21px);line-height:1.5}
+.hotel .tarifa b{display:block;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--oliva-escuro);margin-bottom:6px;font-weight:700}
+@media(max-width:620px){.contatos{grid-template-columns:1fr}}
+.nota{margin-top:16px;font-size:16.5px;color:var(--texto-suave);font-style:italic}
+.pag{margin-top:26px;padding-top:24px;border-top:1px solid var(--linha);font-size:clamp(18px,2.1vw,20px)}
+.pag b{display:block;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--texto-suave);margin-bottom:6px;font-weight:600}
+
+/* como chegar de BH */
+.trans{display:grid;gap:16px;margin-top:44px}
+.trans .opt{border:1px solid var(--linha);border-radius:18px;padding:clamp(24px,4vw,34px) clamp(18px,4vw,36px);background:rgba(255,255,255,.35);text-align:center}
+.trans .opt>svg{display:block;margin:0 auto 10px;color:var(--oliva)}
+.trans .opt>div{max-width:34em;margin:0 auto}
+.trans b{display:block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--oliva-escuro);margin-bottom:10px}
+.trans p{font-size:clamp(18px,2.1vw,20px);line-height:1.55;color:var(--texto)}
+.trans p+p{margin-top:10px}
+.trans strong{font-weight:600;color:var(--oliva-escuro)}
+.trans .transfer{margin-top:18px;padding:14px 18px;border-radius:14px;background:rgba(194,196,146,.26);font-size:clamp(18px,2.1vw,20px);line-height:1.5}
+.trans .transfer small{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--oliva-escuro);margin-bottom:4px}
+.trans .transfer a{color:var(--oliva-escuro);font-weight:600;text-decoration:none;border-bottom:1px solid var(--oliva);white-space:nowrap}
+
+/* presentes */
+.presente{--bg:var(--salvia)}
+.presente .ilus{width:clamp(150px,22vw,210px);margin:0 auto 6px;mix-blend-mode:multiply}
+
+/* RSVP */
+.rsvp-form{margin-top:44px;text-align:left;display:grid;gap:26px}
+.campo label,.campo .l{display:block;font-size:13px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--texto-suave);margin-bottom:10px}
+.campo input[type=text],.campo textarea{width:100%;padding:15px 18px;border-radius:14px;border:1px solid var(--linha);background:rgba(255,255,255,.55);font:inherit;color:var(--texto);outline:none;transition:.25s}
+.campo input:focus,.campo textarea:focus{border-color:var(--oliva);background:#fff}
+.opcoes{display:grid;gap:10px}
+.opcoes label{display:flex;align-items:center;gap:14px;margin:0;padding:15px 18px;border:1px solid var(--linha);border-radius:14px;background:rgba(255,255,255,.4);cursor:pointer;
+  text-transform:none;letter-spacing:.02em;font-size:19px;font-weight:500;color:var(--texto);transition:.25s}
+.opcoes input{accent-color:var(--oliva-escuro);width:18px;height:18px}
+.opcoes label:has(input:checked){background:var(--oliva-escuro);color:var(--creme);border-color:var(--oliva-escuro)}
+.opcoes.duas{grid-template-columns:1fr 1fr}
+@media(max-width:520px){.opcoes.duas{grid-template-columns:1fr}}
+.step{display:flex;align-items:center;gap:16px}
+.step button{width:46px;height:46px;border-radius:50%;border:1px solid var(--oliva-escuro);background:transparent;color:var(--oliva-escuro);font-size:24px;cursor:pointer;font-family:var(--serif);transition:.25s}
+.step button:hover{background:var(--oliva-escuro);color:var(--creme)}
+.step output{min-width:44px;text-align:center;font-size:34px;color:var(--oliva-escuro);font-weight:500}
+.rsvp-form .btn{justify-self:center;margin-top:6px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,40px);opacity:0;z-index:200;background:var(--oliva-escuro);color:var(--creme);padding:16px 26px;border-radius:14px;max-width:min(92vw,460px);text-align:center;transition:.5s var(--ease);box-shadow:0 12px 30px rgba(40,44,10,.3)}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+/* rodapé */
+footer{--bg:var(--oliva);color:#fff;text-align:center;padding:76px 24px 54px;position:relative}
+footer img{width:84px;margin:0 auto 18px}
+footer .n{font-family:var(--script);font-size:clamp(46px,8vw,68px);line-height:1.1}
+footer p{letter-spacing:.34em;text-transform:uppercase;font-size:13.5px;margin-top:10px;opacity:.92}
+footer .dom{margin-top:26px;opacity:.75;letter-spacing:.24em}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- ============ ABERTURA ============ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Abrir o convite">
+  <div class="stage" id="stage">
+    <div class="pocket">
+      <div class="piece p-bottom"><i></i></div>
+      <div class="piece p-left"><i></i></div>
+      <div class="piece p-right"><i></i></div>
+      <div class="invite-text">Temos a alegria de convidar você<br>para celebrar o nosso casamento</div>
+    </div>
+    <div class="flap">
+      <i></i>
+      <div class="seal" id="seal">
+        <img src="assets/selo.png" alt="" draggable="false">
+      </div>
+    </div>
+  </div>
+  <div class="tap">Toque para abrir</div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Seções">
+  <a href="#celebracao">Cerimônia</a>
+  <a href="#rsvp">Confirmação</a>
+  <a href="#presentes">Presentes</a>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-kicker" data-seq="1">Vamos nos casar</p>
+    <h1>
+      <span class="nm" data-seq="2">Nathália</span>
+      <span class="amp" data-seq="3">&amp;</span>
+      <span class="nm" data-seq="4">Victor</span>
+    </h1>
+  </div>
+  <a class="hero-scroll" href="#convite" data-seq="5"><span class="pill">Continue rolando<br>e confirme sua presença
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+  </a>
+</section>
+
+<!-- ============ CONVITE ============ -->
+<section class="convite band" id="convite">
+  <div class="wrap wide">
+    <img class="mono reveal" src="assets/monograma-verde.png" alt="Monograma NV">
+    <p class="frase reveal">Com a bênção de Deus e a alegria de nossas famílias, convidamos para a celebração do nosso casamento</p>
+        <h2 class="nomes reveal">Nathália &amp; Victor</h2>
+    <div class="dataBloco reveal">
+      <div class="lado">Julho</div>
+      <div class="dia">10</div>
+      <div class="lado">2027</div>
+    </div>
+    <p class="dataSub reveal">Sábado · 15h</p>
+    <p class="local reveal">Vinícola Alma Rios · Patos de Minas · MG</p>
+  </div>
+</section>
+
+<!-- ============ CONTAGEM ============ -->
+<section class="contagem band" id="contagem">
+  <div class="in wrap center">
+    <img class="galho reveal" src="assets/uvas-galho.png" alt="" aria-hidden="true">
+    <h2 class="reveal">Contagem regressiva</h2>
+    <span class="eyebrow reveal" id="cd-sub" style="margin-top:30px">Até 10 de julho de 2027</span>
+    <div class="cd reveal" id="cd" aria-live="off">
+      <div><b data-u="d">--</b><span>Dias</span></div>
+      <div><b data-u="h">--</b><span>Horas</span></div>
+      <div><b data-u="m">--</b><span>Minutos</span></div>
+      <div><b data-u="s">--</b><span>Segundos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CELEBRAÇÃO ============ -->
+<section class="sec band" id="celebracao">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow">O grande dia</span><h2>A Celebração</h2></div>
+    <div class="cartao reveal" style="margin-top:88px">
+      <img class="ilus" src="assets/toile-portao.jpg" alt="Ilustração do portão da Vinícola Alma Rios">
+      <span class="eyebrow">Cerimônia &amp; festa</span>
+      <h3>Vinícola Alma Rios</h3>
+      <p class="endereco">BR-354, Km 176 · Patos de Minas · MG</p>
+      <p class="sub">Cerimônia nos vinhedos, com a festa em seguida, no mesmo local.</p>
+      <hr class="rule">
+      <p class="dt">Sábado, 10 de julho de 2027</p>
+      <p class="hr">15h</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Vin%C3%ADcola%20Alma%20Rios%2C%20BR-354%20Km%20176%2C%20Patos%20de%20Minas%20MG" target="_blank" rel="noopener">Ver no mapa</a>
+        <a class="btn solid" href="https://www.google.com/maps/dir/?api=1&destination=Vin%C3%ADcola%20Alma%20Rios%2C%20BR-354%20Km%20176%2C%20Patos%20de%20Minas%20MG" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+    <div class="mapa reveal">
+      <iframe title="Mapa da Vinícola Alma Rios" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Vin%C3%ADcola%20Alma%20Rios%2C%20BR-354%20Km%20176%2C%20Patos%20de%20Minas%20MG&output=embed"></iframe>
+    </div>
+    <div class="dress reveal" id="dress-code">
+      <small class="rot">Dress code</small>
+      <h3>Social Completo</h3>
+      <p class="dress-txt">Preparamos cada detalhe desse dia com muito carinho e adoraríamos ver todos vocês nesse clima com a gente.</p>
+      <div class="trajes">
+        <div><small class="rot">Homens</small><p>Terno, gravata e sapato social.</p></div>
+        <div><small class="rot">Mulheres</small><p>Vestido longo.</p></div>
+      </div>
+      <div class="bloco"><small class="rot">Cores</small><p>Pedimos, com carinho, que evitem tons muito claros, como branco, off-white, bege, prata e cores pastéis, além de estampas com fundo claro.</p></div>
+      <div class="bloco dica"><small class="rot">Dica</small><p>A cerimônia será ao ar livre, nos vinhedos. Para as mulheres, salto bloco ou plataforma é mais confortável que salto fino. Em julho, as noites em Patos de Minas costumam ser frias, então vale levar um casaco ou xale.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMAÇÃO ============ -->
+<section class="sec prog band" id="programacao">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow">Fim de semana do casamento</span><h2>Programação</h2></div>
+    <div class="linha-tempo">
+      <div class="ev dia reveal"><div class="t">Sexta-feira · 9 de julho</div></div>
+      <div class="ev reveal"><div class="h">Dia<small>todo</small></div><div><h4>Chegada a Patos de Minas</h4><p>Recomendamos que os convidados cheguem à cidade já na sexta.</p></div></div>
+      <div class="ev dia reveal"><div class="t">Sábado · 10 de julho</div></div>
+      <div class="ev reveal"><div class="h">15h</div><div><h4>Cerimônia</h4><p>Nos vinhedos da Vinícola Alma Rios.</p></div></div>
+      <div class="ev reveal"><div class="h">Em seguida</div><div><h4>Festa</h4><p>No mesmo local, logo após a cerimônia.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOSPEDAGEM ============ -->
+<section class="sec dark band" id="hospedagem">
+  <div class="wrap">
+    <div class="center reveal"><h2>Hospedagem</h2></div>
+    <div class="aviso reveal">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <p><strong>Atenção:</strong> haverá outros três casamentos em Patos de Minas no mesmo dia, então a rede hoteleira da cidade deve lotar. Reserve com antecedência.</p>
+    </div>
+    <div class="hotel reveal">
+      <span class="tag">Hotel parceiro</span>
+      <h3>Hotel Fratele</h3>
+      <p class="ideia">Escolhemos um hotel para reunir todo mundo no mesmo lugar: tomar café da manhã juntos, facilitar a ida e a volta da festa e aproveitar mais tempo com vocês.</p>
+      <div class="tarifa"><b>Tarifa especial para convidados</b>Ao reservar, informe que a hospedagem é para o casamento do Victor e da Nathália.</div>
+      <div class="contatos">
+        <div><small>E-mail</small><a href="mailto:reservas@hotelfratele.com">reservas@<wbr>hotelfratele.com</a></div>
+        <div><small>Telefone</small><a href="tel:+553438206600">(34) 3820-6600</a><a href="tel:+553438206620">(34) 3820-6620</a></div>
+        <div><small>WhatsApp</small><a href="https://wa.me/5534996658200" target="_blank" rel="noopener">(34) 99665-8200</a></div>
+      </div>
+      <p class="nota">O hotel pede preferência por e-mail ou telefone, porque o WhatsApp costuma demorar.</p>
+      <div class="pag"><b>Pagamento</b>No balcão, após a estadia, ou parcelado via Pix, mês a mês, até julho de 2027.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO CHEGAR DE BH ============ -->
+<section class="sec band" id="chegar">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow">Para quem vem de Belo Horizonte</span><h2>Como chegar de BH</h2>
+      <p class="lead">A maioria dos convidados vem de Belo Horizonte. Veja as opções para chegar a Patos de Minas.</p></div>
+    <div class="trans reveal">
+      <div class="opt">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 1 0 4 0m6 0a2 2 0 1 0 4 0M3 13l2-6h14l2 6v4H3v-4z"/></svg>
+        <div>
+          <b>De carro</b>
+          <p>Patos de Minas fica a cerca de <strong>390 km</strong> de Belo Horizonte, por volta de <strong>5 horas</strong> de viagem. A estrada é boa e, em grande parte, duplicada.</p>
+        </div>
+      </div>
+      <div class="opt">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21v-4m8 4v-4M8 14h.01M16 14h.01"/></svg>
+        <div>
+          <b>De ônibus</b>
+          <p>A empresa <strong>Gontijo</strong> tem ônibus <strong>todos os dias</strong> de Belo Horizonte para Patos de Minas, com cerca de <strong>6 horas</strong> de viagem. Um dos horários mais procurados sai de BH à <strong>meia-noite</strong> e chega às <strong>6h da manhã</strong>, então dá para ir dormindo.</p>
+        </div>
+      </div>
+      <div class="opt">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.3c3 0 6 1.5 6 5"/></svg>
+        <div>
+          <b>Caronas</b>
+          <p><strong>Precisa de carona?</strong> Fale com os noivos pelo WhatsApp e vamos conectar você a quem estiver indo de carro com lugares livres.</p>
+          <p><strong>Vai de carro e tem lugares sobrando?</strong> Fale com os noivos também, que vamos conectar você a quem precisa.</p>
+          <div class="transfer"><small>Transfer (táxi) de BH para Patos</small>Indicamos o Alisson: <a href="tel:+5531993919001">(31) 99391-9001</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESENTES ============ -->
+<section class="sec presente band" id="presentes">
+  <div class="wrap center">
+    <img class="ilus reveal" src="assets/toile-cestas.jpg" alt="" aria-hidden="true">
+    <span class="eyebrow reveal">Lista de presentes</span>
+    <h2 class="reveal">Presentes</h2>
+    <p class="lead reveal">Sua presença é o nosso maior presente. Se quiser nos presentear, preparamos uma lista em um site parceiro.</p>
+    <div class="btns reveal">
+      <a class="btn solid" id="btn-presentes" href="#presentes" role="button">Ver lista de presentes</a>
+    </div>
+    <p class="nota reveal"><span class="pendente">[link da lista de presentes a definir]</span></p>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="sec band" id="rsvp">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow">RSVP · Confirme sua presença</span><h2>Confirmação</h2>
+      <p class="lead">Pedimos a gentileza de confirmar sua presença até <span class="pendente">[DATA LIMITE]</span>.</p></div>
+    <form class="rsvp-form reveal" id="rsvp-form" novalidate>
+      <div class="campo"><label for="nome">Seu nome *</label><input type="text" id="nome" name="nome" autocomplete="name" required></div>
+      <div class="campo"><span class="l">Você vai nos acompanhar? *</span>
+        <div class="opcoes">
+          <label><input type="radio" name="vai" value="sim" required> Será uma alegria estar presente</label>
+          <label><input type="radio" name="vai" value="nao"> Infelizmente não poderei comparecer</label>
+        </div></div>
+      <div class="campo" id="bloco-qtd"><span class="l">Número de convidados no seu grupo</span>
+        <div class="step"><button type="button" data-d="-1" aria-label="Menos">−</button><output id="qtd">1</output><button type="button" data-d="1" aria-label="Mais">+</button></div></div>
+      <div class="campo" id="bloco-nomes"><label for="acomp">Nome dos acompanhantes</label><input type="text" id="acomp" name="acomp" placeholder="Se houver"></div>
+      <div class="campo"><label for="msg">Uma mensagem para os noivos (opcional)</label><textarea id="msg" name="msg" rows="4"></textarea></div>
+      <button class="btn solid" type="submit">Enviar resposta</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="band">
+  <img src="assets/monograma-branco.png" alt="">
+  <div class="n">Nathália &amp; Victor</div>
+  <p>10 de julho de 2027</p>
+  <p>Patos de Minas · MG</p></footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* ---------- Abertura ---------- */
+  var intro = $('#intro'), stage = $('#stage'), seal = $('#seal');
+  var opened = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // leve inclinação seguindo o mouse
+  if(!reduce && window.matchMedia('(hover:hover)').matches){
+    intro.addEventListener('mousemove', function(e){
+      if(opened) return;
+      var x = (e.clientX/innerWidth - .5), y = (e.clientY/innerHeight - .5);
+      stage.style.transform = 'rotateY('+(x*3.2)+'deg) rotateX('+(-y*3.2)+'deg)';
+    });
+  }
+
+  function openInvite(){
+    if(opened) return; opened = true;
+    stage.style.transform = '';
+    seal.classList.add('press');
+    intro.classList.add('opening');
+    setTimeout(function(){ intro.classList.add('slide'); }, reduce?50:1750);
+    setTimeout(function(){
+      document.body.classList.add('revealed');
+    }, reduce?100:2500);
+    setTimeout(function(){
+      document.body.classList.remove('locked');
+      intro.classList.add('fade');
+      window.scrollTo(0,0);
+    }, reduce?150:3300);
+    setTimeout(function(){ intro.classList.add('gone'); }, reduce?400:4300);
+  }
+  // no computador o convite diz "Clique"; no celular, "Toque"
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){ $('.tap').textContent = 'Clique para abrir'; }
+  intro.addEventListener('click', openInvite);
+  intro.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite();} });
+  // permite pular a abertura com ?pular na URL (útil para testes)
+  if(/[?&]pular/.test(location.search)){ opened=true; document.body.classList.remove('locked'); document.body.classList.add('revealed'); intro.classList.add('gone'); }
+
+  /* ---------- Revelação ao rolar ---------- */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.08, rootMargin:'0px 0px -4% 0px'});
+    $$('.reveal').forEach(function(el){ io.observe(el); });
+  } else { $$('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ---------- Menu: seção ativa ---------- */
+  var links = $$('.nav a');
+  var secs = links.map(function(a){return $(a.getAttribute('href'))});
+  var io2 = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){
+      links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id); });
+    }});
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){ s && io2.observe(s); });
+
+  /* ---------- Contagem regressiva (10/07/2027, 15h, horário de Brasília) ---------- */
+  var alvo = new Date('2027-07-10T15:00:00-03:00').getTime();
+  var els = {d:$('[data-u=d]'),h:$('[data-u=h]'),m:$('[data-u=m]'),s:$('[data-u=s]')};
+  function tick(){
+    var t = Math.max(0, alvo - Date.now());
+    if(t===0){ $('#cd-sub').textContent = 'Chegou o grande dia!'; }
+    var d = Math.floor(t/864e5), h = Math.floor(t%864e5/36e5), m = Math.floor(t%36e5/6e4), s = Math.floor(t%6e4/1e3);
+    els.d.textContent = d; els.h.textContent = String(h).padStart(2,'0'); els.m.textContent = String(m).padStart(2,'0'); els.s.textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---------- RSVP ---------- */
+  // Configure aqui quando definirmos onde receber as respostas:
+  var RSVP = { endpoint:'', email:'' };
+  // Quando tivermos o site da lista de presentes, coloque o endereço aqui:
+  var PRESENTES_URL = '';
+  var qtd = 1, out = $('#qtd');
+  $$('.step button').forEach(function(b){ b.addEventListener('click', function(){
+    qtd = Math.min(12, Math.max(1, qtd + Number(b.dataset.d))); out.textContent = qtd;
+  });});
+  function vai(){ var r = $('input[name=vai]:checked'); return r && r.value; }
+  function atualiza(){
+    var nao = vai()==='nao';
+    ['#bloco-qtd','#bloco-nomes'].forEach(function(s){ $(s).style.display = nao ? 'none' : ''; });
+  }
+  $$('input[name=vai]').forEach(function(r){ r.addEventListener('change', atualiza); });
+
+  var toast = $('#toast'), tt;
+  function aviso(txt){ toast.textContent = txt; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 5200); }
+
+  $('#rsvp-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = $('#nome').value.trim();
+    if(!nome){ aviso('Por favor, informe seu nome.'); $('#nome').focus(); return; }
+    if(!vai()){ aviso('Por favor, diga se poderá comparecer.'); return; }
+    var dados = {
+      nome: nome, vai: vai(), convidados: qtd, acompanhantes: $('#acomp').value.trim(),
+      mensagem: $('#msg').value.trim()
+    };
+    if(RSVP.endpoint){
+      fetch(RSVP.endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(dados)})
+        .then(function(){ aviso('Obrigado, '+nome.split(' ')[0]+'! Recebemos sua resposta.'); e.target.reset(); qtd=1; out.textContent=1; atualiza(); })
+        .catch(function(){ aviso('Não conseguimos enviar agora. Tente novamente em instantes.'); });
+    } else if(RSVP.email){
+      var corpo = 'Nome: '+dados.nome+'\nPresença: '+(dados.vai==='sim'?'confirmada':'não poderá comparecer')+
+        (dados.vai==='sim'?'\nConvidados: '+dados.convidados+'\nAcompanhantes: '+dados.acompanhantes:'')+'\nMensagem: '+dados.mensagem;
+      location.href = 'mailto:'+RSVP.email+'?subject='+encodeURIComponent('RSVP · '+dados.nome)+'&body='+encodeURIComponent(corpo);
+    } else {
+      console.log('RSVP (ainda sem destino configurado):', dados);
+      aviso('A confirmação online será ativada em breve. Obrigado pelo carinho!');
+    }
+  });
+  var bp = $('#btn-presentes');
+  if(PRESENTES_URL){ bp.href = PRESENTES_URL; bp.target = '_blank'; bp.rel = 'noopener'; var pn = bp.closest('.wrap').querySelector('.nota'); if(pn) pn.hidden = true; }
+  else { bp.addEventListener('click', function(e){ e.preventDefault(); aviso('A lista de presentes estará disponível em breve.'); }); }
+  atualiza();
+})();
+</script>
+</body>
+</html>
