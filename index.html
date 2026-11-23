@@ -65,8 +65,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .p-left{z-index:2}.p-right{z-index:2}.p-bottom{z-index:1}
 
 .flap{position:absolute;inset:0;z-index:5;transform-origin:50% 0;transform:rotateX(0);
-  transition:transform 1.7s var(--ease);filter:drop-shadow(0 6px 18px rgba(60,52,24,.35))}
-.flap>i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 50%);
+  transition:transform 1.7s var(--ease)}
+/* a sombra fica só no papel da aba; o selo não fica dentro de nenhuma camada com filtro (evita o "quadrado" no Safari do iPhone) */
+.flap-papel{position:absolute;inset:0;filter:drop-shadow(0 6px 18px rgba(60,52,24,.35))}
+.flap-papel>i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 50%);
   background:linear-gradient(rgba(247,243,233,.5),rgba(247,243,233,.5)),url(assets/papel.jpg) center/cover}
 
 .invite-text{position:absolute;left:0;right:0;top:81%;z-index:3;text-align:center;font-family:var(--script);color:var(--oliva-escuro);
@@ -74,11 +76,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .invite-text small{display:block;font-family:var(--serif);font-size:.42em;letter-spacing:.34em;text-transform:uppercase;margin-top:.9em;opacity:.7}
 
 /* lacre */
-.seal{position:absolute;left:50%;top:50%;width:clamp(210px,34vmin,330px);aspect-ratio:770/720;transform:translate(-50%,-50%);z-index:6}
-.seal img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(38,34,12,.42)) drop-shadow(0 2px 3px rgba(38,34,12,.35));user-select:none;-webkit-user-drag:none}
+/* a imagem já traz a sombra embutida; a caixa é maior que o selo para caber a sombra */
+.seal{position:absolute;left:50%;top:50%;width:clamp(248px,40vmin,390px);aspect-ratio:910/860;transform:translate(-50%,-50%);z-index:6}
+.seal img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
 .seal.press{animation:press .45s ease-out}
 @keyframes press{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(.9)}100%{transform:translate(-50%,-50%) scale(1)}}
-.seal::after{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(255,255,255,.7);opacity:0;animation:pulse 2.6s ease-out infinite;pointer-events:none}
+.seal::after{content:"";position:absolute;inset:-4%;border-radius:50%;border:1px solid rgba(255,255,255,.7);opacity:0;animation:pulse 2.6s ease-out infinite;pointer-events:none}
 .intro.opening .seal::after{display:none}
 @keyframes pulse{0%{transform:scale(.8);opacity:.0}25%{opacity:.8}100%{transform:scale(1.35);opacity:0}}
 
@@ -310,7 +313,7 @@ footer .dom{margin-top:26px;opacity:.75;letter-spacing:.24em}
       <div class="invite-text">Temos a alegria de convidar você<br>para celebrar o nosso casamento</div>
     </div>
     <div class="flap">
-      <i></i>
+      <div class="flap-papel"><i></i></div>
       <div class="seal" id="seal">
         <img src="assets/selo.png" alt="" draggable="false">
       </div>
